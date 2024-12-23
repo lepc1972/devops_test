@@ -59,8 +59,24 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Ejecuta el script de build
-                sh 'npm run build'
+                sh '''
+                     # Cargar NVM para que npm funcione
+                    export NVM_DIR="$HOME/.nvm"
+                    if [ -s "$NVM_DIR/nvm.sh" ]; then
+                        . "$NVM_DIR/nvm.sh"
+                    fi
+
+                    # Verificar que NVM, Node.js y npm estén disponibles
+                    echo "Verificando instalación de NVM, Node.js y npm"
+                    nvm --version
+                    node -v
+                    npm -v
+
+                    # Instalar dependencias con npm
+                    echo "Instalando dependencias con npm..."
+                    npm run build
+                '''
+                
             }
         }
     }
