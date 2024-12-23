@@ -37,6 +37,11 @@ pipeline {
         stage("Install dependencies") {
             steps {
                 sh '''
+                    # Cargar NVM para usar npm en el build
+                    export NVM_DIR="$HOME/.nvm"
+                    if [ -s "$NVM_DIR/nvm.sh" ]; then
+                        . "$NVM_DIR/nvm.sh"
+                    fi
                     # instala dependencias definidas en package.json
                     npm install
                 '''
