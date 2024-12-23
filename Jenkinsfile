@@ -73,11 +73,15 @@ pipeline {
                     npm -v
 
                     # Instalar dependencias con npm
-                    echo "Instalando dependencias con npm..."
+                    echo "Building"
                     npm run build
                 '''
                 
             }
+        }
+        stage('test') {
+            steps {
+                 echo "testing"            }
         }
     }
 }
