@@ -34,5 +34,13 @@ pipeline {
                 '''
             }
         }
+        stage("Install dependencies") {
+            steps {
+                sh '''
+                    # instala dependencias definidas en package.json
+                    npm install
+                '''
+            }
+        }
     }
 }
