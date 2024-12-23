@@ -87,6 +87,7 @@ pipeline {
                     if [ -s "$NVM_DIR/nvm.sh" ]; then
                         . "$NVM_DIR/nvm.sh"
                     fi
+                    nvm use 18
 
                     # Verificar que NVM, Node.js y npm estén disponibles
                     echo "Verificando instalación de NVM, Node.js y npm"
