@@ -57,5 +57,11 @@ pipeline {
             }
             
         }
+        stage('Build') {
+            steps {
+                // Ejecuta el script de build
+                sh 'npm run build'
+            }
+        }
     }
 }
