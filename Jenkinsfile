@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Install Node.js and npm') {
             steps {
-                echo 'Instalando Node.js y npm'
+                echo 'Instalando Node.js y npm sin sudo'
                 sh '''
                 # Descarga Node.js 18
                 curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-                # Instala Node.js y npm
-                sudo apt-get install -y nodejs
+                # Instala Node.js y npm como usuario root
+                apt-get install -y nodejs
                 # Verifica las versiones
                 node --version
                 npm --version
@@ -29,3 +29,4 @@ pipeline {
         }
     }
 }
+
