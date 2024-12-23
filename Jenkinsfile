@@ -52,7 +52,7 @@ pipeline {
 
                     # Instalar dependencias con npm
                     echo "Instalando dependencias con npm..."
-                    npm install
+                    npm install --legacy-peer-deps
                 '''
             }
             
