@@ -35,17 +35,27 @@ pipeline {
             }
         }
         stage("Install dependencies") {
+
             steps {
                 sh '''
-                    # Cargar NVM para usar npm en el build
+                     # Cargar NVM para que npm funcione
                     export NVM_DIR="$HOME/.nvm"
                     if [ -s "$NVM_DIR/nvm.sh" ]; then
                         . "$NVM_DIR/nvm.sh"
                     fi
-                    # instala dependencias definidas en package.json
+
+                    # Verificar que NVM, Node.js y npm estén disponibles
+                    echo "Verificando instalación de NVM, Node.js y npm"
+                    nvm --version
+                    node -v
+                    npm -v
+
+                    # Instalar dependencias con npm
+                    echo "Instalando dependencias con npm..."
                     npm install
                 '''
             }
+            
         }
     }
 }
