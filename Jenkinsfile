@@ -121,7 +121,7 @@ pipeline {
 
                     # deploy on netlify
                     npm install netlify-cli --legacy-peer-deps
-                    echo 'deploying to production . $netlify_site_id'
+                    echo 'deploying to production . $NETIFLY_SITE_ID'
 
                     
                 '''
