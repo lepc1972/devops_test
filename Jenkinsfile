@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        NETLIFY_SITE_ID = '86520679-cf66-41fe-a1f0-029ad24a500f'
+    }
+
     stages {
         stage('Install NVM') {
             steps {
@@ -117,6 +121,7 @@ pipeline {
 
                     # deploy on netlify
                     npm install netlify-cli --legacy-peer-deps
+                    echo 'deploying to production . $netlify_site_id'
 
                     
                 '''
