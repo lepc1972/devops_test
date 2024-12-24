@@ -3,6 +3,7 @@ pipeline {
 
     environment {
         NETLIFY_SITE_ID = '86520679-cf66-41fe-a1f0-029ad24a500f'
+        NETLIFY_AUTH_TOKEN = 'nfp_JXmHNWnNavtL5xshnWsWE5oTm7GqGAija702'
     }
 
     stages {
@@ -121,8 +122,9 @@ pipeline {
 
                     # deploy on netlify
                     npm install netlify-cli --legacy-peer-deps
-                    
+
                     echo "deploying to production. site ID: $NETLIFY_SITE_ID"
+                    echo "deploying to production. site TOKEN: $NETLIFY_AUTH_TOKEN"
 
                     
                 '''
