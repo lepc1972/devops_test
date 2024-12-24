@@ -105,12 +105,6 @@ pipeline {
                  
             }
         }
-    }
-    post {
-        always {
-            junit 'test-results/junit.xml'
-        }
-
         stage('deploy') {
 
             steps {
@@ -127,5 +121,12 @@ pipeline {
                 '''
             }
         }
+    }
+    post {
+        always {
+            junit 'test-results/junit.xml'
+        }
+
+        
     }
 }
