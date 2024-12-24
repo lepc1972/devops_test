@@ -113,7 +113,7 @@ pipeline {
 
         stage('deploy') {
 
-            step {
+            steps {
                 sh '''
                     # Cargar NVM para que npm funcione
                     export NVM_DIR="$HOME/.nvm"
