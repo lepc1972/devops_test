@@ -116,7 +116,8 @@ pipeline {
                     fi
 
                     # deploy on netlify
-                    npm install netifly-cli
+                    npm install netlify-cli --legacy-peer-deps
+
                     
                 '''
             }
