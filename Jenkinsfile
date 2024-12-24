@@ -125,6 +125,7 @@ pipeline {
 
                     echo "deploying to production. site ID: $NETLIFY_SITE_ID"
                     echo "deploying to production. site TOKEN: $NETLIFY_AUTH_TOKEN"
+                    netlify deploy --dir=build --prod --site=$NETLIFY_SITE_ID --auth=$NETLIFY_AUTH_TOKEN
 
                     
                 '''
