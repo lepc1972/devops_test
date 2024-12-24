@@ -110,5 +110,22 @@ pipeline {
         always {
             junit 'test-results/junit.xml'
         }
+
+        stage('deploy') {
+
+            step {
+                sh '''
+                    # Cargar NVM para que npm funcione
+                    export NVM_DIR="$HOME/.nvm"
+                    if [ -s "$NVM_DIR/nvm.sh" ]; then
+                        . "$NVM_DIR/nvm.sh"
+                    fi
+
+                    # deploy on netlify
+                    npm install netifly-cli
+                    
+                '''
+            }
+        }
     }
 }
